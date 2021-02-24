@@ -23,10 +23,14 @@
 	</header>
     
     <article id="HelloWorld-PHP" class="PHP-test" >
-    	<h2>PHP test: 1</h2>
+    	<h2>PHP test: Hello World</h2>
         <?php include 'PHP/helloWorld.php';?>
     </article>
 
+    <article id="php-test1" class="PHP-test">
+    	<h2>PHP test: 1</h2>
+    	<?php include 'PHP/test1.php';?>
+    </article>
 
 </body>
 

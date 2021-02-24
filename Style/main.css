@@ -10,7 +10,8 @@ body {
 
 #pageheader {
 	font-family: "Orbitron", "sans-serif";
-	background-color: peru;
+	background-color: teal;
+	color: white;
 	margin: 1em 0 1em 0;
 	padding: .4em;
 	border: solid 2px black;
