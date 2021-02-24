@@ -25,6 +25,7 @@ body {
 
 .PHP-test {
 	background-color: lightgrey;
+	margin: 0 0 .4em 0;
 	padding: .5em;
 }
 .PHP-test h2 {
