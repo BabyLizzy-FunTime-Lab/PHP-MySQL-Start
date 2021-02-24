@@ -22,9 +22,10 @@
     	<p>Let's do some PHP & SQL</p>
 	</header>
     
-    <div id="HelloWorld-PHP">
+    <article id="HelloWorld-PHP" class="PHP-test" >
+    	<h2>PHP test: 1</h2>
         <?php include 'PHP/helloWorld.php';?>
-    </div>
+    </article>
 
 
 </body>

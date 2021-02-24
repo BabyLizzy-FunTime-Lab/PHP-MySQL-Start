@@ -10,11 +10,22 @@ body {
 
 #pageheader {
 	font-family: "Orbitron", "sans-serif";
+	background-color: peru;
 	margin: 1em 0 1em 0;
+	padding: .4em;
+	border: solid 2px black;
 }
 #pageheader h1 {
 	margin: 0 0 0 0;
 }
 #pageheader p {
 	margin: .5em 0 0 0;
+}
+
+.PHP-test {
+	background-color: lightgrey;
+	padding: .5em;
+}
+.PHP-test h2 {
+	margin: 0 0 .3em 0;
 }
