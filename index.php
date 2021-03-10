@@ -12,7 +12,8 @@
 	<link href="https://fonts.googleapis.com/css?family=Tomorrow&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" type="text/css" href="Style/normalize.css">
-	<link rel="stylesheet" type="text/css" href="Style/main.css">
+	<link rel="stylesheet" type="text/css" href="Style/main.css?v=<?php echo time();?>">
+	<!-- The echo time forces the css to reload everytime -->
     
 </head>
 
