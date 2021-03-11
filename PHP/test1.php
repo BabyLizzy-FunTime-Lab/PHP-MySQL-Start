@@ -37,4 +37,45 @@
 	- $author.
 _END;
 	echo $out;
+	
+	// Making a constant
+	define("FIRST_CONSTANT", "This is my first PHP constant.");
+	echo "<h3>Constant</h3>";
+	echo FIRST_CONSTANT;
+
+	// Magic constant
+	echo "<h3>Magic constant</h3>";
+	echo "This is line " . __LINE__ . " of file " . __FILE__;
+
+	// Global variabels
+	global $AWESOME_TITS;
+	$AWESOME_TITS = TRUE;
+	echo "<h3>Global variabels</h3>";
+	echo "The status of awesome = " . $AWESOME_TITS;
+
+	//Static variabels
+	echo "<h3>Static variabel</h3>";
+	function staticCounter()
+	{
+		static $count = 0;
+		echo "The count = " . $count;
+		echo "<br>";
+		$count++;
+		if ($count == 5) {
+			echo "Last count.";
+			echo "<br>";
+		}
+		while ($count < 6) {
+			staticCounter();
+		}
+		
+	}
+	staticCounter();
+
+	//Super globals
+	echo "<h3>Super Globals</h3>";
+	echo $GLOBALS;
+	$from = $_SERVER['HTTP_REFERER'];
+	echo $from;
+
 ?>

@@ -29,9 +29,28 @@
     </article>
 
     <article id="php-test1" class="PHP-test">
-    	<h2>PHP test: 1</h2>
+    	<h2>PHP test: 1. Echo's and variabels</h2>
     	<?php include 'PHP/test1.php';?>
     </article>
+
+    <article id="php-test2" class="PHP-test">
+    	<h2>PHP test: 2. Functions</h2>
+    	<?php include 'PHP/test2.php';?>
+    </article>
+
+    <article id="php-test3" class="PHP-test">
+    	<h2>PHP test: 3. Super Globals</h2>
+    	<?php include 'PHP/test3.php';?>
+    	<form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
+    		<label for="name">Name: </label>
+    		<input type="text" name="name" id="name">
+    		<input type="submit" name="submit" id="submit">
+    	</form>
+    </article>
+
+    <footer>
+    	<h3>Footer</h3>
+    </footer>
 
 </body>
 
