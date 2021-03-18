@@ -60,23 +60,27 @@
     	<section class="test4-ans">
     		<P>Your age in seconds:</P>
     		<P id="agesec">....</P>
-    		<button id="agesec-calender">Add to your Google Calender</button>
     	</section>
     	<section class="test4-ans">
     		<P>Your 1 million sec birthdate:</P>
     		<p id="onemil">....</p>
-    		<button id="onemil-calender">Add to your Google Calender</button>
+    		<button id="onemil-calender">Save the Date</button>
 	    </section>
 		<section class="test4-ans">
-    		<P>Your 1.5 million sec birthdate:</P>
-    		<p id="anderhalfmil">....</p>
-    		<button id="anderhalfmil-calender">Add to your Google Calender</button>
+    		<P>Your 1 billion sec birthdate:</P>
+    		<p id="onebillion">....</p>
+    		<button id="onebillion-calender">Save the Date</button>
     	</section>
     	<section class="test4-ans">
-    		<P>Your 2 million sec birthdate:</P>
-    		<p id="twomil">....</p>
-    		<button id="twomil-calender">Add to your Google Calender</button>
-    	</section>    	
+    		<P>Your 1.5 billion sec birthdate:</P>
+    		<p id="one&halfBillion">....</p>
+    		<button id="one&halfBillion-calender">Save the Date</button>
+    	</section>
+    	<section class="test4-ans">
+    		<P>Your 2 billion sec birthdate:</P>
+    		<p id="twobillion">....</p>
+    		<button id="twobillion-calender">Save the Date</button>
+    	</section>   	
     </article>
 
     <footer>
