@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" type="text/css" href="Style/normalize.css">
 	<link rel="stylesheet" type="text/css" href="Style/main.css">
-
+	<script src="JS/front.js" async></script>
 	<!-- The echo time forces the css to reload everytime -->
     
 </head>
