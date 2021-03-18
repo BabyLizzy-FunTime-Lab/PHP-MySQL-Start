@@ -49,7 +49,7 @@ _END;
 
 	// Global variabels
 	global $AWESOME_TITS;
-	$AWESOME_TITS = TRUE;
+	$AWESOME_TITS = true;
 	echo "<h3>Global variabels</h3>";
 	echo "The status of awesome = " . $AWESOME_TITS;
 
@@ -72,10 +72,5 @@ _END;
 	}
 	staticCounter();
 
-	//Super globals
-	echo "<h3>Super Globals</h3>";
-	echo $GLOBALS;
-	$from = $_SERVER['HTTP_REFERER'];
-	echo $from;
-
+	
 ?>
