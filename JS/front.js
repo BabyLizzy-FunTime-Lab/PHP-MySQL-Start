@@ -22,9 +22,10 @@ function reqBirthdateCalc(userBirthdate) {
 	calcSecs.onreadystatechange = function() {
 		if (calcSecs.readyState === 4 && calcSecs.status === 200) {
 			console.log(calcSecs.getAllResponseHeaders());
+			let resObject = JSON.parse(this.responseText);
 			console.log("This comes from the back" + calcSecs.responseText);
-			
-			
+			console.log(resObject);
+
 		}
 	}
 
