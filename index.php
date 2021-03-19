@@ -13,6 +13,8 @@
 
 	<link rel="stylesheet" type="text/css" href="Style/normalize.css">
 	<link rel="stylesheet" type="text/css" href="Style/main.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script src="JS/front.js" async></script>
 	<!-- The echo time forces the css to reload everytime -->
     
@@ -52,10 +54,10 @@
     <article id="php-test4" class="PHP-test">
     	<h2>PHP test: 4. AJAX en PHP</h2>
     	<p>How many seconds old are you and when are your milestones?</p>
-    	<form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
+    	<form name="test4_form">
     		<label for="birthdate">Birthdate: </label>
     		<input type="date" name="birthdate" id="birthdate">
-    		<input type="submit" name="submit" id="submit">
+    		<input type="submit" name="submit_birthdate" id="submit_birthdate">
     	</form>
     	<section class="test4-ans">
     		<P>Your age in seconds:</P>
@@ -80,6 +82,16 @@
     		<P>Your 2 billion sec birthdate:</P>
     		<p id="twobillion">....</p>
     		<button id="twobillion-calender">Save the Date</button>
+    	</section>
+    	<section class="test4-ans">
+    		<P>Your 2.5 billion sec birthdate:</P>
+    		<p id="two&halfBillion">....</p>
+    		<button id="two&halfBillion-calender">Save the Date</button>
+    	</section>
+    	<section class="test4-ans">
+    		<P>Your 3 billion sec birthdate:</P>
+    		<p id="treebillion">....</p>
+    		<button id="treebillion-calender">Save the Date</button>
     	</section>   	
     </article>
 
