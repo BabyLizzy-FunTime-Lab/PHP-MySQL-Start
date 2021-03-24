@@ -3,7 +3,6 @@ function elementID(ID) {
 	return document.getElementById(ID);
 }
 
-
 // Ajax
 function reqBirthdateCalc(userBirthdate) {
 	// Start Ajax
@@ -21,11 +20,23 @@ function reqBirthdateCalc(userBirthdate) {
 	calcSecs.responseType = "text";
 	calcSecs.onreadystatechange = function() {
 		if (calcSecs.readyState === 4 && calcSecs.status === 200) {
-			console.log(calcSecs.getAllResponseHeaders());
 			let resObject = JSON.parse(this.responseText);
-			console.log("This comes from the back" + calcSecs.responseText);
 			console.log(resObject);
 
+			elementID("ageSec").innerText = "Now: " + resObject.age;
+			let ageStart = resObject.age;
+			let ageNow = ageStart;
+			let age = setInterval(function() {
+				ageNow++;
+				elementID("ageNow").innerText = "Right Now: " + ageNow;
+			}, 1000)
+			elementID("onemil").innerText = resObject.onemillion;
+			elementID("halfbillion").innerText = resObject.half_billion;
+			elementID("onebillion").innerText = resObject.onebillion;
+			elementID("one&halfBillion").innerText = resObject.onehalf_billion;
+			elementID("twobillion").innerText = resObject.twobillion;
+			elementID("two&halfBillion").innerText = resObject.twohalf_billion;
+			elementID("treebillion").innerText = resObject.treebillion;
 		}
 	}
 

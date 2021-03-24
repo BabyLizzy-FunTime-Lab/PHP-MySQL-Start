@@ -19,9 +19,9 @@
 			'onemillion'=> date("l F jS Y", timeMachine($birthTime, "mil", 1)),
 			'half_billion'=>date("l F jS Y", timeMachine($birthTime, "bil", 0.5)),
 			'onebillion'=>date("l F jS Y", timeMachine($birthTime, "bil", 1)),
-			'one_and_half_billion'=>date("l F jS Y", timeMachine($birthTime, "bil", 1.5)),
+			'onehalf_billion'=>date("l F jS Y", timeMachine($birthTime, "bil", 1.5)),
 			'twobillion'=>date("l F jS Y", timeMachine($birthTime, "bil", 2)),
-			'two_and_half_billion'=>date("l F jS Y", timeMachine($birthTime, "bil", 2.5)),
+			'twohalf_billion'=>date("l F jS Y", timeMachine($birthTime, "bil", 2.5)),
 			'treebillion'=>date("l F jS Y", timeMachine($birthTime, "bil", 3))
 		);
 

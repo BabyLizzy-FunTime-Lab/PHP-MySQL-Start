@@ -61,13 +61,19 @@
     	</form>
     	<section class="test4-ans">
     		<P>Your age in seconds:</P>
-    		<P id="agesec">....</P>
+    		<p id="ageSec">Now:</p>
+    		<P id="ageNow">Right Now:</P>
     	</section>
     	<section class="test4-ans">
     		<P>Your 1 million sec birthdate:</P>
     		<p id="onemil">....</p>
     		<button id="onemil-calender">Save the Date</button>
 	    </section>
+	    <section class="test4-ans">
+    		<P>Your half billion sec birthdate:</P>
+    		<p id="halfbillion">....</p>
+    		<button id="halfbillion-calender">Save the Date</button>
+    	</section>
 		<section class="test4-ans">
     		<P>Your 1 billion sec birthdate:</P>
     		<p id="onebillion">....</p>
