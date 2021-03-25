@@ -61,42 +61,49 @@
     	</form>
     	<section class="test4-ans">
     		<P>Your age in seconds:</P>
-    		<p id="ageSec">Now:</p>
-    		<P id="ageNow">Right Now:</P>
+    		<p id="ageSec">Now: ....</p>
+    		<P id="ageNow">Right Now: ....</P>
     	</section>
-    	<section class="test4-ans">
+    	<section class="test4-ans" id="onemil">
     		<P>Your 1 million sec birthdate:</P>
-    		<p id="onemil">....</p>
+    		<p id="onemil_date">Date: ....</p>
+    		<p id="onemil_age">Your age on this day: .....</p>
     		<button id="onemil-calender">Save the Date</button>
 	    </section>
-	    <section class="test4-ans">
+	    <section class="test4-ans" id="halfbillion">
     		<P>Your half billion sec birthdate:</P>
-    		<p id="halfbillion">....</p>
+    		<p id="halfbillion_date">Date: ....</p>
+    		<p id="halfbillion_age">Your age on this day: .....</p>
     		<button id="halfbillion-calender">Save the Date</button>
     	</section>
-		<section class="test4-ans">
+		<section class="test4-ans" id="onebillion">
     		<P>Your 1 billion sec birthdate:</P>
-    		<p id="onebillion">....</p>
+    		<p id="onebillion_date">Date: ....</p>
+    		<p id="onebillion_age">Your age on this day: .....</p>
     		<button id="onebillion-calender">Save the Date</button>
     	</section>
-    	<section class="test4-ans">
+    	<section class="test4-ans" id="one&halfBillion">
     		<P>Your 1.5 billion sec birthdate:</P>
-    		<p id="one&halfBillion">....</p>
+    		<p id="one&halfBillion_date">Date: ....</p>
+    		<p id="one&halfBillion_age">Your age on this day: .....</p>
     		<button id="one&halfBillion-calender">Save the Date</button>
     	</section>
-    	<section class="test4-ans">
+    	<section class="test4-ans" id="twobillion">
     		<P>Your 2 billion sec birthdate:</P>
-    		<p id="twobillion">....</p>
+    		<p id="twobillion_date">Date: ....</p>
+    		<p id="twobillion_age">Your age on this day: .....</p>
     		<button id="twobillion-calender">Save the Date</button>
     	</section>
-    	<section class="test4-ans">
+    	<section class="test4-ans" id="two&halfBillion">
     		<P>Your 2.5 billion sec birthdate:</P>
-    		<p id="two&halfBillion">....</p>
+    		<p id="two&halfBillion_date">Date: ....</p>
+    		<p id="two&halfBillion_age">Your age on this day: .....</p>
     		<button id="two&halfBillion-calender">Save the Date</button>
     	</section>
-    	<section class="test4-ans">
+    	<section class="test4-ans" id="treebillion">
     		<P>Your 3 billion sec birthdate:</P>
-    		<p id="treebillion">....</p>
+    		<p id="treebillion_date">Date: ....</p>
+    		<p id="treebillion_age">Your age on this day: .....</p>
     		<button id="treebillion-calender">Save the Date</button>
     	</section>   	
     </article>

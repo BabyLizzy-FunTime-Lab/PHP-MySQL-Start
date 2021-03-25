@@ -4,9 +4,13 @@
 		$bil = 1000000000;
 
 		if ($mil_or_bil === "mil") {
-			return $birthTime + ($mil * $multiplyer); 
+			$age_years = ($mil * $multiplyer) / 60 / 60 / 24 / 365;
+			$date = date("l F jS Y", $birthTime + ($mil * $multiplyer));
+			return $container = array('date' => $date, 'age_years' => number_format($age_years,2,",",".")); 
 		} elseif ($mil_or_bil === "bil") {
-			return $birthTime + ($bil * $multiplyer); 
+			$age_years = ($bil * $multiplyer) / 60 / 60 / 24 / 365;
+			$date = date("l F jS Y", $birthTime + ($bil * $multiplyer));
+			return $container = array('date' => $date, 'age_years' => number_format($age_years,2,",",".")); 
 		}		
 	}
 
@@ -15,20 +19,21 @@
 		$birthTime = strtotime($user_Birthdate);
 
 		$calc = array(
+			'birthTime'=>$birthTime,
 			'age'=>$now - $birthTime, 
-			'onemillion'=> date("l F jS Y", timeMachine($birthTime, "mil", 1)),
-			'half_billion'=>date("l F jS Y", timeMachine($birthTime, "bil", 0.5)),
-			'onebillion'=>date("l F jS Y", timeMachine($birthTime, "bil", 1)),
-			'onehalf_billion'=>date("l F jS Y", timeMachine($birthTime, "bil", 1.5)),
-			'twobillion'=>date("l F jS Y", timeMachine($birthTime, "bil", 2)),
-			'twohalf_billion'=>date("l F jS Y", timeMachine($birthTime, "bil", 2.5)),
-			'treebillion'=>date("l F jS Y", timeMachine($birthTime, "bil", 3))
+			'onemillion'=> timeMachine($birthTime, "mil", 1),
+			'half_billion'=> timeMachine($birthTime, "bil", 0.5),
+			'onebillion'=> timeMachine($birthTime, "bil", 1),
+			'onehalf_billion'=> timeMachine($birthTime, "bil", 1.5),
+			'twobillion'=> timeMachine($birthTime, "bil", 2),
+			'twohalf_billion'=> timeMachine($birthTime, "bil", 2.5),
+			'treebillion'=> timeMachine($birthTime, "bil", 3)
 		);
 
 		$calcJSON = json_encode($calc);
 		return $calcJSON;
-		
 	}
+
 
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		define('BIRTHDATE_CONST',  $_POST['birthdate']);
