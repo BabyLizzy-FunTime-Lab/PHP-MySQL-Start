@@ -67,5 +67,5 @@ elementID("submit_birthdate").addEventListener("click", function(event) {
 
 elementID("onemil_calender").addEventListener("click", function(event) {
 	event.preventDefault();
-	
+	console.log("I work");
 })
