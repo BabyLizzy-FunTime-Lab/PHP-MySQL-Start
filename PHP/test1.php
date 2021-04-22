@@ -72,5 +72,5 @@ _END;
 	}
 	staticCounter();
 
-	
+
 ?>
