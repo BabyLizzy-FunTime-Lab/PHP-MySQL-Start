@@ -5,7 +5,7 @@
 	$current_user = $username;
 	echo "Currentuser = " . $current_user;
 	echo "<br>";
-	$writestuf = "Essie's ass is bouncy.";
+	$writestuf = "This is an echo.";
 	echo $writestuf;
 	echo "<h3>Sam's Corner</h3> <p>Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit.  </p>";
 
@@ -48,10 +48,10 @@ _END;
 	echo "This is line " . __LINE__ . " of file " . __FILE__;
 
 	// Global variabels
-	global $AWESOME_TITS;
-	$AWESOME_TITS = true;
+	global $AWESOME;
+	$AWESOME = true;
 	echo "<h3>Global variabels</h3>";
-	echo "The status of awesome = " . $AWESOME_TITS;
+	echo "The status of awesome = " . $AWESOME;
 
 	//Static variabels
 	echo "<h3>Static variabel</h3>";
