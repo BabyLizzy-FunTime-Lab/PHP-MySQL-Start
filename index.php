@@ -47,7 +47,7 @@
     	<form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
     		<label for="name">Name: </label>
     		<input type="text" name="name" id="name">
-    		<input type="submit" name="submit" id="submit">
+    		<input type="submit" name="globals" id="submit">
     	</form>
     </article>
 
@@ -108,6 +108,40 @@
     	</section>   	
     </article>
 
+    <article id="php-test5" class="PHP-test">
+    	<h2>PHP test: Example 4-16</h2>
+    	<p>A = 1;</p>
+    	<p>B = 0;</p>
+    	<?php include 'PHP/example4-16.php';?>
+    </article>
+
+    <article id="php-test6" class="PHP-test">
+    	<h2>PHP Objects</h2>
+    	<?php include 'PHP/objects.php';?>
+    	<form method="POST" action="">
+    		<div>
+    			<label for="name">Name: </label>
+	    		<input type="text" name="name" id="name">
+    			<label for="species">Species: </label>
+	    		<input type="text" name="species">
+    		</div>
+	    	<input type="submit" name="object" value="Submit">
+    	</form>
+    </article>
+    <article id="php-BMI" class="PHP-test">
+        <h2>BMI Calculator</h2>
+        <p>BMI is gewicht gedeeld door lengte in het kwadraat.</p>
+        <form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
+            <p>Voeg hier je gewicht en lengte in.</p>
+            <div>
+                <label for="gewicht">Gewicht in kg: </label>
+                <input type="number" name="gewicht">
+                <label for="lengte">Lengte in meters: </label>
+                <input type="number" name="lengte">
+            </div>
+            <input type="submit" name="BMI" value="Submit">
+        </form>
+    </article>
     <footer>
     	<h3>Footer</h3>
     </footer>

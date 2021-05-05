@@ -7,7 +7,9 @@ body {
 	background-color: var(--kleur-snow);
 	font-family: "Tomorrow", "sans-serif";
 }
-
+label {
+	display: block;
+}
 #pageheader, footer {
 	font-family: "Orbitron", "sans-serif";
 	background-color: teal;

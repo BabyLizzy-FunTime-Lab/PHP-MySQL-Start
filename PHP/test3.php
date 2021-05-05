@@ -5,7 +5,7 @@
 	$from = $_SERVER['HTTP_REFERER'];
 	echo $from;
 
-	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['globals'])) {
 		$name = $_POST['name'];
 		if (empty($name)) {
 			echo "<br>";
