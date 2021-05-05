@@ -131,6 +131,7 @@
     <article id="php-BMI" class="PHP-test">
         <h2>BMI Calculator</h2>
         <p>BMI is gewicht gedeeld door lengte in het kwadraat.</p>
+        <?php include_once 'PHP/BMI.php';?>
         <form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
             <p>Voeg hier je gewicht en lengte in.</p>
             <div>
