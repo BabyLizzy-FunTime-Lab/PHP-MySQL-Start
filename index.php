@@ -138,7 +138,7 @@
                 <label for="gewicht">Gewicht in kg: </label>
                 <input type="number" name="gewicht">
                 <label for="lengte">Lengte in meters: </label>
-                <input type="number" name="lengte">
+                <input type="number" name="lengte" step="0.01">
             </div>
             <input type="submit" name="BMI" value="Submit">
         </form>
