@@ -135,6 +135,8 @@
         <form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
             <p>Voeg hier je gewicht en lengte in.</p>
             <div>
+                <label for="naam">Naam: </label>
+                <input type="text" name="naam">
                 <label for="gewicht">Gewicht in kg: </label>
                 <input type="number" name="gewicht">
                 <label for="lengte">Lengte in meters: </label>
