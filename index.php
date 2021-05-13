@@ -145,6 +145,11 @@
             <input type="submit" name="BMI" value="Submit">
         </form>
     </article>
+    <article id="php-array" class="PHP-test">
+        <h2>PHP Arrays</h2>
+        <p>Let's do some PHP arrays.</p>
+        <?php include_once 'PHP/arrays.php';?>
+    </article>
     <footer>
     	<h3>Footer</h3>
     </footer>
