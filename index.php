@@ -150,6 +150,10 @@
         <p>Let's do some PHP arrays.</p>
         <?php include_once 'PHP/arrays.php';?>
     </article>
+    <article id="php-practical" class="PHP-test">
+        <h2>Practical PHP</h2>
+        <?php include_once 'PHP/practical_PHP.php';?>
+    </article>
     <footer>
     	<h3>Footer</h3>
     </footer>
