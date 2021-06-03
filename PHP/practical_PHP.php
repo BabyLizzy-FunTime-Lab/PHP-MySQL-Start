@@ -16,5 +16,18 @@
 	} else {
 		echo "Date in the code is NOT valid";
 	}
-
+	echo "<h3>File Handeling</h3>";
+	if (file_exists("testData/testfile.txt")) {
+		echo "File exists";
+	} else {
+		$fh = fopen("testData/testfile.txt", "w") or die("Failed to create file");
+		$text = <<<_END
+		Line 1
+		Line 2
+		Line 3
+		_END;
+		fwrite($fh, $text) or die("Could not write to file");
+		fclose($fh);
+		echo "File 'testfile.txt' written successfully";
+	}
 ?>
