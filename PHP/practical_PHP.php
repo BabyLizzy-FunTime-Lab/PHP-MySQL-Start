@@ -16,18 +16,46 @@
 	} else {
 		echo "Date in the code is NOT valid";
 	}
-	echo "<h3>File Handeling</h3>";
+	echo "<h3>File Handeling</h3>Let's create a file:<br>";
 	if (file_exists("testData/testfile.txt")) {
-		echo "File exists";
+		echo "File exists<br>";
 	} else {
-		$fh = fopen("testData/testfile.txt", "w") or die("Failed to create file");
+		$fh = fopen("testData/testfile.txt", "w") or die("Failed to create file<br>");
 		$text = <<<_END
 		Line 1
 		Line 2
 		Line 3
 		_END;
-		fwrite($fh, $text) or die("Could not write to file");
+		fwrite($fh, $text) or die("Could not write to file<br>");
 		fclose($fh);
-		echo "File 'testfile.txt' written successfully";
+		echo "File 'testfile.txt' written successfully<br>";
 	}
+	echo "Let's read a file:<br>";
+	$fh = fopen("testData/testfile.txt", "r") or die("File does not exist or you lacl permission");
+	$line = fread($fh,filesize("testData/testfile.txt"));
+	fclose($fh);
+	echo $line . "<br>";
+	echo "Let's copy a file:<br>";
+	copy("testData/testfile.txt", "testData/testfile_2.txt") or 
+		die("Could not copy file<br>");
+	echo "File copied<br>";
+	echo "Let's move a file:<br>";
+	if (!rename("testData/testfile_2.txt", "testData_2/testfile_2.txt")) {
+		echo "Could not rename file<br>";
+	} else {
+		echo "File has been moved.<br>";
+	}
+	echo "Let's delete a file:<br>";
+	if (!unlink("testData_2/testfile_2.txt")) {
+		echo "Could not delete.<br>";
+	} else {
+		echo "File testData_2/testfile_2.txt deleted<br>";
+	}
+	$fh = fopen("testData/testfile.txt", "r+") or die("Failed to open file<br>");
+	$text = fgets($fh);
+	fseek($fh, 0, SEEK_END);
+	fwrite($fh, "$text") or die("Could not write to file<br>");
+	fclose($fh);
+	echo "File is updated<br>";
+
 ?>
