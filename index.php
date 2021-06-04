@@ -153,6 +153,7 @@
     <article id="php-practical" class="PHP-test">
         <h2>Practical PHP</h2>
         <?php include_once 'PHP/practical_PHP.php';?>
+        <?php include_once 'PHP/uploadSomething.php';?>
     </article>
     <footer>
     	<h3>Footer</h3>
