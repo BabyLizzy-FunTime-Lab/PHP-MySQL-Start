@@ -57,5 +57,6 @@
 	fwrite($fh, "$text") or die("Could not write to file<br>");
 	fclose($fh);
 	echo "File is updated<br>";
-
+	echo "Let's lock a file:<br>";
+	
 ?>
