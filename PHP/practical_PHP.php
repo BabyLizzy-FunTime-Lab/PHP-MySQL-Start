@@ -57,5 +57,35 @@
 	fwrite($fh, "$text") or die("Could not write to file<br>");
 	fclose($fh);
 	echo "File is updated<br>";
-
+	echo "Let's lock a file:<br>";
+	$fh = fopen("testData/testfile.txt", 'r+') or die("Failed to open file");
+	$text = fgets($fh);
+	if (flock($fh, LOCK_EX)) {
+		fseek($fh, 0, SEEK_END);
+		fwrite($fh, $text) or die("Could not write to file<br>");
+		flock($fh, LOCK_UN);
+	}
+	fclose($fh);
+	echo "File successfully updated<br>";
+	echo "Let's read an entire file:<br>" . 
+	"<pre>" . file_get_contents("testData/testfile.txt") .
+	"</pre>";
+	
+	// echo "Let's upload files:<br>";
+	// echo <<<_END
+	// 	<form method='post' action='PHP/practical_PHP.php' enctype='multipart/form-data'>
+	// 	Select FIle: <input type='file' name='filename'>
+	// 	<input type='submit' value='Upload'>
+	// 	</form>
+	// _END;
+	// if ($_FILES) {
+	// 	$name = $_FILES['filename']['name'];
+	// 	// move_uploaded_file($_FILES['filename']['tmp_name'], $name);
+	// 	// echo "Uploaded image '$name'<br><img src='$name'>";
+	// 	if(move_uploaded_file($_FILES['filename']['tmp_name'], $name)) {
+	// 		echo "Uploaded image '$name'<br><img src='$name'>";
+	// 	} else {
+	// 		echo "File not uploaded";
+	// 	}
+	// }
 ?>
