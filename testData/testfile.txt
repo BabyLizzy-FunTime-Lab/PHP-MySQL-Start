@@ -22,25 +22,4 @@ Line 1
 Line 1
 Line 1
 Line 1
-<<<<<<< HEAD
-Line 1
-Line 1
-Line 1
-Line 1
-Line 1
-Line 1
-Line 1
-Line 1
-Line 1
-Line 1
-Line 1
-Line 1
-Line 1
-Line 1
-Line 1
-Line 1
-Line 1
-Line 1
-Line 1
-=======
->>>>>>> ac80db32be241e1ddba5d0ca4b2090ea1ea7433e
+
