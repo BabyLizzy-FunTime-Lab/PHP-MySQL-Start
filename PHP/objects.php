@@ -19,6 +19,7 @@
 	}
 
 	class User {
+		// Properties
 		public $user_id, $user_name, $user_species;
 		// Method
 		function userWelcome() {
@@ -28,9 +29,9 @@
 		}
 	}
 	class Twin {
-		public $twin_id;
-		public $twin_name;
-		public $twin_species;
+		// Properties
+		public $twin_id, $twin_name, $twin_species;
+		// Constructor
 		public function __construct($id, $name, $species) {
 			$this->twin_id = $id;
 			$this->twin_name = $name;

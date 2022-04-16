@@ -14,7 +14,10 @@
 	$starTrek_personel['commander'] = "List of commanders";
 	$starTrek_personel['lieutenant commander'] = "List of lieutenat commanders";
 	$starTrek_personel['lieutenant'] = "List of lieutenants";
-	echo $starTrek_personel['captains'];
+	foreach ($starTrek_personel as $index=>$enlisted) {
+		echo "$index: $enlisted<br>";
+	}
+	echo "Print one: " . $starTrek_personel['captains'];
 
 	echo "<h3>Foreach....as</h3>";
 	echo "<p>Regular Array</p>";
