@@ -89,4 +89,9 @@
 	// 		echo "File not uploaded";
 	// 	}
 	// }
+	echo "<h3>Dive back in</h3>" .
+		"<button id='filestart' onClick='fileApp'>Start File app</button>";
+	function fileApp() {
+		echo "sup";
+	}
 ?>

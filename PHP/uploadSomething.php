@@ -1,5 +1,5 @@
 <?php
-	echo "Let's upload files:<br>";
+	echo "<h3>Let's upload files:</h3><br>";
 	echo <<<_END
 		<form method='post' action='PHP/uploadSomething.php' enctype='multipart/form-data'>
 		Select FIle: <input type='file' name='filename'>
