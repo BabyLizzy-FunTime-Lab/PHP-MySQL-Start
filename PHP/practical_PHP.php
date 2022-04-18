@@ -19,17 +19,18 @@
 	echo "<h3>File Handeling</h3>Let's create a file:<br>";
 	if (file_exists("testData/testfile.txt")) {
 		echo "File exists<br>";
-	} else {
-		$fh = fopen("testData/testfile.txt", "w") or die("Failed to create file<br>");
-		$text = <<<_END
-		Line 1
-		Line 2
-		Line 3
-		_END;
-		fwrite($fh, $text) or die("Could not write to file<br>");
-		fclose($fh);
-		echo "File 'testfile.txt' written successfully<br>";
-	}
+	} 
+	// else {
+	// 	$fh = fopen("testData/testfile.txt", "w") or die("Failed to create file<br>");
+	// 	$text = <<<_END
+	// 	Line 1
+	// 	Line 2
+	// 	Line 3
+	// 	_END;
+	// 	fwrite($fh, $text) or die("Could not write to file<br>");
+	// 	fclose($fh);
+	// 	echo "File 'testfile.txt' written successfully<br>";
+	// }
 	echo "Let's read a file:<br>";
 	$fh = fopen("testData/testfile.txt", "r") or die("File does not exist or you lacl permission");
 	$line = fread($fh,filesize("testData/testfile.txt"));
