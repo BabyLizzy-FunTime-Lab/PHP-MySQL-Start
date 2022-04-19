@@ -89,9 +89,10 @@
 	// 		echo "File not uploaded";
 	// 	}
 	// }
-	echo "<h3>Dive back in</h3>" .
-		"<button id='filestart' onClick='fileApp'>Start File app</button>";
+	if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['startFileApp'])) {
+		fileApp();
+	}
 	function fileApp() {
-		echo "sup";
+		echo "fileApp here";
 	}
 ?>
