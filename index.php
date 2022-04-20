@@ -152,8 +152,8 @@
     </article>
     <article id="php-practical" class="PHP-test">
         <h2>Practical PHP</h2>
-        <?php include_once 'PHP/practical_PHP.php';?>
         <?php include_once 'PHP/uploadSomething.php';?>
+        <?php include_once 'PHP/practical_PHP.php';?>
         <h2>Dive back in</h2>
         <form method='POST' action='<?php echo $_SERVER['PHP_SELF'];?>'>
             <input type='submit' name='startFileApp' value='File App'>

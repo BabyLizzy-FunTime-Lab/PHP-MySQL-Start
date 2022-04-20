@@ -93,6 +93,32 @@
 		fileApp();
 	}
 	function fileApp() {
-		echo "fileApp here";
+		echo "<h2>New File App</h2>";
+		if (file_exists("testData/testfile_3.txt")) {
+			$filelink = "testData/testfile_3.txt";
+			$copy = "testData/testfile_3_copy.txt";
+			$file = fopen($filelink, "r") or die("Could not read file");
+			$file_1 = fopen($filelink, "r") or die("Could not read file");
+			// each operation needs it own referance to the txt file.
+			$line = fgets($file);
+			$partline = fread($file_1, filesize($filelink));
+			fclose($file);
+			fclose($file_1);
+			if(!copy($filelink, $copy)) {
+				echo "Could not copy file<br>";
+			} else {
+				echo "File was copied<br>";
+			}
+			echo "This is the first string line of the file:<br>" . $line . "<br>";
+			echo "<br>";
+			echo "These are the first 3 characters of the file:<br>" . $partline . "<br>";
+		} else {
+			$newfile = fopen("testData/testfile_3.txt", "w") or die("Failed to create file");
+			$fileinput = <<<_END
+			Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! In a comic, you know how you can tell who the arch-villain's going to be? He's the exact opposite of the hero. And most times they're friends, like you and me! I should've known way back when... You know why, David? Because of the kids. They called me Mr Glass.
+			_END;
+			fwrite($newfile, $fileinput) or die("Could not write to file");
+			fclose($newfile);
+		}
 	}
 ?>
