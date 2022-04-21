@@ -68,9 +68,9 @@
 	}
 	fclose($fh);
 	echo "File successfully updated<br>";
-	echo "Let's read an entire file:<br>" . 
-	"<pre>" . file_get_contents("testData/testfile.txt") .
-	"</pre>";
+	// echo "Let's read an entire file:<br>" . 
+	// "<pre>" . file_get_contents("testData/testfile.txt") .
+	// "</pre>";
 	
 	// echo "Let's upload files:<br>";
 	// echo <<<_END
@@ -92,11 +92,28 @@
 	if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['startFileApp'])) {
 		fileApp();
 	}
+	// delete a file
+	if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['deleteFile'])) {
+		if (!unlink('testData/testfile_3.txt')) {
+			echo "Could not delete testfile_3";
+		} else {
+			echo "<h2>New File App</h2>";
+			echo "testfile_3 has been deleted.";
+		}
+	}
+	if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['addText'])) {
+		if (file_exists("testData/testfile_3.txt")) {
+			textAdd();
+		} else {
+			echo "<h2>New File App</h2>";
+			echo "testfile_3.txt does not exist.";
+		}
+	}
 	function fileApp() {
 		echo "<h2>New File App</h2>";
 		if (file_exists("testData/testfile_3.txt")) {
 			$filelink = "testData/testfile_3.txt";
-			$copy = "testData/testfile_3_copy.txt";
+			$copylink = "testData/testfile_3_copy.txt";
 			$file = fopen($filelink, "r") or die("Could not read file");
 			$file_1 = fopen($filelink, "r") or die("Could not read file");
 			// each operation needs it own referance to the txt file.
@@ -104,14 +121,15 @@
 			$partline = fread($file_1, filesize($filelink));
 			fclose($file);
 			fclose($file_1);
-			if(!copy($filelink, $copy)) {
+			if(!copy($filelink, $copylink)) {
 				echo "Could not copy file<br>";
 			} else {
 				echo "File was copied<br>";
+				echo "<br>";	
 			}
 			echo "This is the first string line of the file:<br>" . $line . "<br>";
 			echo "<br>";
-			echo "These are the first 3 characters of the file:<br>" . $partline . "<br>";
+			echo "This all the text in the file:<br>" . $partline . "<br>";
 		} else {
 			$newfile = fopen("testData/testfile_3.txt", "w") or die("Failed to create file");
 			$fileinput = <<<_END
@@ -119,6 +137,25 @@
 			_END;
 			fwrite($newfile, $fileinput) or die("Could not write to file");
 			fclose($newfile);
+			echo "A newfile was made";
 		}
 	}
+	function textAdd() {
+		$gluetext = array(
+			"<br>And anotha thing mothafuka!!!",
+			"<br>Listen here!!",
+			"<br>Do you speak english?!"
+		);
+		$text = array(
+			"Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows. Some pilots get picked and become television programs. Some don't, become nothing. She starred in one of the ones that became nothing.",
+			"Look, just because I don't be givin' no man a foot massage don't make it right for Marsellus to throw Antwone into a glass motherfuckin' house, fuckin' up the way the nigger talks. Motherfucker do that shit to me, he better paralyze my ass, 'cause I'll kill the motherfucker, know what I'm sayin'?",
+			"My money's in that office, right? If she start giving me some bullshit about it ain't there, and we got to go someplace else and get it, I'm gonna shoot you in the head then and there. Then I'm gonna shoot that bitch in the kneecaps, find out where my goddamn money is. She gonna tell me too. Hey, look at me when I'm talking to you, motherfucker. You listen: we go in there, and that nigga Winston or anybody else is in there, you the first motherfucker to get shot. You understand?"
+		);
+		$targetfilelink = "testData/testfile_3.txt";
+		$targetfile = fopen($targetfilelink, "a+") or die("Failed to open file");
+		fwrite($targetfile, $gluetext[rand(0,2)] . "<br>" . $text[rand(0,2)]);
+		fclose($targetfile);
+		echo "testfile_3 updated";
+	}
+
 ?>

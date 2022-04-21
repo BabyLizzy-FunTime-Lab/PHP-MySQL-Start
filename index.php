@@ -157,6 +157,8 @@
         <h2>Dive back in</h2>
         <form method='POST' action='<?php echo $_SERVER['PHP_SELF'];?>'>
             <input type='submit' name='startFileApp' value='File App'>
+            <input type='submit' name='addText' value='Add to File'>
+            <input type="submit" name="deleteFile" value="Delete File">
         </form>
     </article>
     <footer>
