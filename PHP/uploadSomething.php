@@ -8,8 +8,8 @@
 	_END;
 	if ($_FILES) {
 		$name = $_FILES['filename']['name'];
-		$testData = 'C:/Program Files/Ampps/www/PHP-MySQL-Start/testData/' . $name;
-		$imgLocacion = "/PHP-MySQL-Start/testData/" . $name;
+		$savefile = 'C:/Program Files/Ampps/www/PHP-MySQL-Start/testData/';
+		$testData = $savefile . $name;
 		switch ($_FILES['filename']['type']) {
 			case 'image/jpeg': $ext = 'jpg'; break;
 			case 'image/gif': $ext = 'gif'; break;
@@ -18,8 +18,11 @@
 			default: $ext = '';	break;
 		}
 		if ($ext) {
-			if(move_uploaded_file($_FILES['filename']['tmp_name'], $testData)) {
-			echo "Uploaded a " . $ext . " image.<br>Filename: '$name'<br><img src='" . $imgLocacion . "'>";
+			$safename = "image.$ext";
+			$safepath = $savefile . $safename;
+			$safeLocacion = "/PHP-MySQL-Start/testData/" . $safename;
+			if(move_uploaded_file($_FILES['filename']['tmp_name'], $safepath)) {
+			echo "Uploaded a " . $ext . " image.<br>Filename: '$name'<br><img src='" . $safeLocacion . "'>";
 			} else {
 				echo "File not uploaded";
 			}
