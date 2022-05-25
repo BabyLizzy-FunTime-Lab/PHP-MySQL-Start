@@ -163,7 +163,7 @@
     </article>
 	<article>
 		<h2>Get data from Publications db</h2>
-		<?php include_once 'PHP/sqltest.php';?>
+		<?php include_once 'PHP/query_fetch.php';?>
 	</article>
     <footer>
     	<h3>Footer</h3>
