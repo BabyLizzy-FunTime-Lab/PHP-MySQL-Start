@@ -162,8 +162,11 @@
         </form>
     </article>
 	<article>
-		<h2>Get data from Publications db</h2>
+		<h2>Combine PHP with SQL</h2>
+		<h3>Get data from Publications db</h3>
 		<?php include_once 'PHP/query_fetch.php';?>
+		<h3>Insert & Delete</h3>
+		<?php include_once 'PHP/sqltest.php';?>
 	</article>
     <footer>
     	<h3>Footer</h3>
