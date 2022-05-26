@@ -5,7 +5,7 @@
     function get_post($conn, $var) {
         return $conn->real_escape_string($_POST[$var]);
     }
-
+    
     if ($conn->connect_error) {
         die("Fatal Error");
     }
@@ -18,12 +18,16 @@
             echo "DELETE failed<br><br>";
         }
     }
-
     if (isset($_POST['author']) &&
         isset($_POST['title']) &&
         isset($_POST['category']) &&
         isset($_POST['year']) &&
-        isset($_POST['isbn'])) 
+        isset($_POST['isbn']))
+    // if (!empty($_POST['author']) &&
+    //     !empty($_POST['title']) &&
+    //     !empty($_POST['category']) &&
+    //     !empty($_POST['year']) &&
+    //     !empty($_POST['isbn'])) 
     {
         $author = get_post($conn, 'author');
         $title = get_post($conn, 'title');
@@ -31,7 +35,7 @@
         $year = get_post($conn, 'year');
         $isbn = get_post($conn, 'isbn');
         $query = "INSERT INTO classics VALUES" . 
-            "('$author', '$title', '$cattegory', '$year', '$isbn')";
+            "('$author', '$title', '$category', '$year', '$isbn')";
         $result = $conn->query($query);
         if (!$result) {
             echo "INSERT failed<br><br>";
@@ -39,14 +43,14 @@
     }
 
     echo <<<_END
-    <form action="sqltest.php" method="post>
+    <form action="PHP/sqltest.php" method="post">
     <pre>
-        <div>Author     <input type="text" name="author"></div>
-        <div>Title      <input type="text" name="title"></div>
-        <div>Category   <input type="text" name="category"></div>
-        <div>Year       <input type="text" name="year"></div>
-        <div>ISBN       <input type="text" name="isbn"></div>
-                        <input type="submit" value="ADD RECORD">
+        Author      <input type="text" name="author">
+        Title       <input type="text" name="title">
+        Category    <input type="text" name="category">
+        Year        <input type="text" name="year">
+        ISBN        <input type="text" name="isbn">
+                    <input type="submit" value="ADD RECORD">
     </pre>
     </form>
 _END;
@@ -76,9 +80,9 @@ _END;
             Year $r3
             ISBN $r4
         </pre>
-        <form action='sqltest.php' method='post'>
+        <form action='PHP/sqltest.php' method='post'>
         <input type='hidden' name='delete' value='yes'>
-        <input type='hidden' name='isbn' value'$r4'>
+        <input type='hidden' name='isbn' value=$r4>
         <input type='submit' value='DELETE RECORD'></form>
 _END;
     }
