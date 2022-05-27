@@ -167,6 +167,13 @@
 		<?php include_once 'PHP/query_fetch.php';?>
 		<h3>Insert & Delete</h3>
 		<?php include_once 'PHP/sqltest.php';?>
+		<h3>Working with Tables</h3>
+		<?php include_once 'PHP/createTable.php';?>
+		<form method='POST' action='<?php echo $_SERVER['PHP_SELF'];?>'>
+            <input type='submit' name='create_table' value='CREATE TABLE'>
+            <input type='submit' name='describe_table' value='DESCRIBE TABLE'>
+            <input type="submit" name="drop_table" value="DROP TABLE">
+        </form>
 	</article>
     <footer>
     	<h3>Footer</h3>
