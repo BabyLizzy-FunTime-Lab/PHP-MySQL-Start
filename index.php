@@ -169,10 +169,12 @@
 		<?php include_once 'PHP/sqltest.php';?>
 		<h3>Working with Tables</h3>
 		<?php include_once 'PHP/createTable.php';?>
+		<?php include_once 'PHP/describeTable.php';?>
 		<form method='POST' action='<?php echo $_SERVER['PHP_SELF'];?>'>
-            <input type='submit' name='create_table' value='CREATE TABLE'>
-            <input type='submit' name='describe_table' value='DESCRIBE TABLE'>
-            <input type="submit" name="drop_table" value="DROP TABLE">
+            <input type='radio' name='table' value='create'>
+            <input type='radio' name='table' value='describe'>
+            <input type="radio" name="table" value='drop'>
+			<input type="submit" value="DO IT">
         </form>
 	</article>
     <footer>

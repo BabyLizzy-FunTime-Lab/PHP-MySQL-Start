@@ -3,7 +3,7 @@
     $conn = new mysqli($hn, $un, $pw, $db);
     if ($conn->connect_error) die("Fatal Error");
 
-    if (isset($_POST['create_table'])) {
+    if (isset($_POST['table']) && $_POST['table'] == 'create') {
         $query = "CREATE TABLE cats (
             id SMALLINT NOT NULL AUTO_INCREMENT,
             family VARCHAR(32) NOT NULL,
