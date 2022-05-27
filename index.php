@@ -171,9 +171,12 @@
 		<?php include_once 'PHP/createTable.php';?>
 		<?php include_once 'PHP/describeTable.php';?>
 		<form method='POST' action='<?php echo $_SERVER['PHP_SELF'];?>'>
-            <input type='radio' name='table' value='create'>
-            <input type='radio' name='table' value='describe'>
-            <input type="radio" name="table" value='drop'>
+            <div><input type='radio' id='createtable' name='table' value='create'>
+			<label for='createtable'>Create Table</label></div>
+            <div><input type='radio' id='describetable' name='table' value='describe'>
+			<label for='describetable'>Describe Table</label></div>
+            <div><input type="radio" id='droptable' name="table" value='drop'>
+			<label for='droptable'>Drop Table</label></div>
 			<input type="submit" value="DO IT">
         </form>
 	</article>
