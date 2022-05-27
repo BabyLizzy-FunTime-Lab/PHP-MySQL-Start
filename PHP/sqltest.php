@@ -44,14 +44,14 @@
 
     echo <<<_END
     <form action="PHP/sqltest.php" method="post">
-    <pre>
-        Author      <input type="text" name="author">
-        Title       <input type="text" name="title">
-        Category    <input type="text" name="category">
-        Year        <input type="text" name="year">
-        ISBN        <input type="text" name="isbn">
-                    <input type="submit" value="ADD RECORD">
-    </pre>
+<pre>
+Author      <input type="text" name="author">
+Title       <input type="text" name="title">
+Category    <input type="text" name="category">
+Year        <input type="text" name="year">
+ISBN        <input type="text" name="isbn">
+            <input type="submit" value="ADD RECORD">
+</pre>
     </form>
 _END;
 
@@ -62,9 +62,10 @@ _END;
     }
 
     $rows = $result->num_rows;
-
+    
     for ($j=0; $j < $rows; $j++) { 
         $row = $result->fetch_array(MYSQLI_NUM);
+        // fetch_array() goes to the next row automaticaly with every itteracion of the loop.
 
         $r0 = htmlspecialchars($row[0]);
         $r1 = htmlspecialchars($row[1]);
@@ -73,13 +74,13 @@ _END;
         $r4 = htmlspecialchars($row[4]);
 
         echo <<<_END
-        <pre>
-            Author $r0
-            Title $r1
-            Category $r2
-            Year $r3
-            ISBN $r4
-        </pre>
+<pre>
+Author:     $r0
+Title:      $r1
+Category:   $r2
+Year:       $r3
+ISBN:       $r4
+</pre>
         <form action='PHP/sqltest.php' method='post'>
         <input type='hidden' name='delete' value='yes'>
         <input type='hidden' name='isbn' value=$r4>
