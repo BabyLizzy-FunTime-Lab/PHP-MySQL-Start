@@ -170,6 +170,7 @@
 		<h3>Working with Tables</h3>
 		<?php include_once 'PHP/createTable.php';?>
 		<?php include_once 'PHP/describeTable.php';?>
+		<?php include_once 'PHP/dropTable.php';?>
 		<form method='POST' action='<?php echo $_SERVER['PHP_SELF'];?>'>
             <div>
 				<input type='radio' id='createtable' name='table' value='create' style="display: inline">

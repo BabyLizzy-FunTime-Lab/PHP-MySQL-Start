@@ -87,6 +87,7 @@ ISBN:       $r4
         <input type='submit' value='DELETE RECORD'></form>
 _END;
     }
+  
 
     $result->close();
     $conn->close();

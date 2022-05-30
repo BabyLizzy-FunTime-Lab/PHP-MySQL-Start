@@ -13,8 +13,11 @@
         )";
 
         $result = $conn->query($query);
-        if(!$result) die ("Database access failed");
-
+        if(!$result) {
+            die ("Database access failed");
+        } else {
+            echo "Table created";
+        }
         // $result->close();
         // $conn->close();
     }
