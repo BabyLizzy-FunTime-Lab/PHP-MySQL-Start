@@ -186,6 +186,8 @@
 			</div>
 			<input type="submit" value="DO IT">
         </form>
+		<h3>Making a query and a subquery</h3>
+		<?php include_once 'PHP/additionalQueries.php';?>
 	</article>
     <footer>
     	<h3>Footer</h3>

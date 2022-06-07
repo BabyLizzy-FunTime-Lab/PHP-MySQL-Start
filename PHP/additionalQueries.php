@@ -3,24 +3,23 @@
     $conn = new mysqli($hn, $un, $pw, $db);
     if ($conn->connect_error) die("Fatal Error");
 
-    if (isset($_POST['catfamily']) &&
-        isset($_POST['catname']) &&
-        isset($_POST['catage'])) {
-            
+    $query = "SELECT * FROM customers";
+    $result = $conn->query($query);
+    if (!$result) die ("Database access failed 1");
+
+    $rows = $result->num_rows;
+
+    for ($j=0; $j < $rows; $j++) { 
+        $row = $result->fetch_array(MYSQLI_NUM);
+        echo htmlspecialchars($row[0]) . " purchased ISBN " . 
+            htmlspecialchars($row[1]) . ":<br>";
+        
+        $subquery = "SELECT * FROM classics WHERE isbn='$row[1]'";
+        $subresult = $conn->query($subquery);
+        if (!$subresult) die ("Database access failed 2");
+
+        $subrow =  $subresult->fetch_array(MYSQLI_NUM);
+        echo "&nbsp;&nbsp;" . htmlspecialchars("'$subrow[1]'") . " by " . 
+            htmlspecialchars($subrow[0]) . "<br><br>";
     }
-
-    echo <<<_END
-    <form action="PHP/adddataTable.php" method="post">
-<pre>
-Catfamily   <input type="text" name="catfamily">
-Name        <input type="text" name="catname">
-Age         <input type="text" name="catage">
-            <input type="submit" value="ADD To cats TABLE">
-</pre>
-    </form>
-_END;
-
-    $query = ""
-
-
 ?>
