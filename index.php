@@ -188,6 +188,8 @@
         </form>
 		<h3>Making a query and a subquery</h3>
 		<?php include_once 'PHP/additionalQueries.php';?>
+		<h3>Placeholders & prepared statements</h3>
+		<?php include_once 'PHP/placeholders.php';?>
 	</article>
     <footer>
     	<h3>Footer</h3>
