@@ -190,6 +190,8 @@
 		<?php include_once 'PHP/additionalQueries.php';?>
 		<h3>Placeholders & prepared statements</h3>
 		<?php include_once 'PHP/placeholders.php';?>
+		<h3>Form handeling</h3>
+		<?php include_once 'PHP/formtest.php';?>
 	</article>
     <footer>
     	<h3>Footer</h3>
