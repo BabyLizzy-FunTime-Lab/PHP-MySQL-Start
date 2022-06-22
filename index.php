@@ -193,6 +193,13 @@
 		<h3>Form handeling</h3>
 		<?php include_once 'PHP/formtest.php';?>
 	</article>
+	<article id="php-6th" class="PHP-test">
+		<?php $var = 'Oefenopgave 5'; ?>
+		<h3><?php echo $var;?></h3>
+		<p>
+			Here is a <a href="https://www.w3schools.com/php/"><?php echo "link " . $var;?></a> to the good stuff
+		</p>
+	</article>
     <footer>
     	<h3>Footer</h3>
     </footer>
