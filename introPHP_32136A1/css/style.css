@@ -1,0 +1,14 @@
+#mugshot-container {
+	width: 200px;
+	height: 250px;
+}
+
+#mugshot {
+	width: inherit;
+	height: inherit;
+}
+
+#hallovideo {
+	width: 290px;
+	height: 520px;
+}
