@@ -1,13 +1,36 @@
+#banner-container {
+	background-color: lightgrey;
+}
+#banner {
+	width: 40em;
+	margin: auto;
+	display: flex;
+	justify-content: space-around;
+}
+#banner h1 {
+	font-size: 3.5em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 #mugshot-container {
 	width: 200px;
 	height: 250px;
 }
-
 #mugshot {
 	width: inherit;
 	height: inherit;
 }
-
+#about-container {
+	display: flex;
+	width: 50em;
+	margin: auto;
+	padding: 2em;
+	justify-content: center;
+}
+#about {
+	padding:  0 2em 0 1em;
+}
 #hallovideo {
 	width: 290px;
 	height: 520px;
