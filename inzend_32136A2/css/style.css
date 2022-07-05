@@ -1,0 +1,21 @@
+#banner-container {
+    background-color: lightgray;    
+}
+#banner {
+    width: 30em;
+    height: 6em;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+#banner h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#BMI-container {
+    width: 45em;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}

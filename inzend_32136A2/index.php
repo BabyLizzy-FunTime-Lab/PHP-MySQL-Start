@@ -1,13 +1,33 @@
 <?php
+    // Lengte in meters
     $input_lengte = 1.91;
+    // Gewicht in kg
     $input_gewicht = 40;
 
-    
-
-    for ($gewicht = $input_gewicht; $gewicht < ($input_gewicht + 120); $gewicht + 10) { 
+    // De BMI berekening en de evaluatieschaal zijn gemaakt volgen de informatie gevonden op, 
+    // https://www.diabetesfonds.nl/over-diabetes/diabetes-in-het-algemeen/woordenboek/body-mass-index-bmi
+    for ($gewicht = $input_gewicht; $gewicht < ($input_gewicht + 120); $gewicht+=10) { 
         static $BMI_overzicht;
         $BMI = $gewicht / pow($input_lengte, 2);
-        $BMI_overzicht = $BMI_overzicht . "<li>Bij een gewicht van " . $gewicht . " kg hebt u een bmi van " . $BMI . "</li>";
+        $BMI_evaluatie;
+        switch ($BMI) {
+            case $BMI < 18.5:
+                $BMI_evaluatie = " ondergewicht (te laag gewicht)";
+                break;
+            case $BMI >= 18.5 && $BMI <= 24.9:
+                $BMI_evaluatie = " gezond gewicht";
+                break;
+            case $BMI >= 25 && $BMI <= 30:
+                $BMI_evaluatie = " overgewicht";
+                break;
+            case $BMI > 30:
+                $BMI_evaluatie = " ernstig overgewicht (obesitas)";
+                break;
+            default:
+                $BMI_evaluatie = " [Error: BMI valt buiten schaal]";
+                break;
+        }
+        $BMI_overzicht = $BMI_overzicht . "<li>Bij een gewicht van " . $gewicht . " kg hebt u een bmi van " . $BMI . ", u hebt" . $BMI_evaluatie . ".</li>";
     }
 
     echo <<<_END
