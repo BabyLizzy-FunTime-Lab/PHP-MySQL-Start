@@ -11,6 +11,18 @@
 		$table_data = $table_data . "</tr>";
 	}
 
+	$array_vraag_1 = array("red", "green", "white");
+	$array_vraag_2 = array(
+		"Volvo" => "Blauw",
+		"Audi" => "Groen",
+		"BMW" => "Geel",
+		"Skoda" => "Geel"
+	);
+	foreach ($array_vraag_2 as $naam => $kleur) {
+		static $cars;
+		$cars = $cars . "<li>" . $naam . "@" . $kleur . "</li>";
+	}
+
 	echo <<<_END
 		<!DOCTYPE html>
 		<html>
@@ -34,6 +46,21 @@
 					</tbody>
 				</table>
 			</article>
+			<article>
+				<h2>Arrays</h2>
+				<h3>Arrays oefen opdracht 1</h3>
+				<h4>Vraag 1:</h4>
+				<p>
+					"The memory of that scene for me is like a frame of film forever 
+					frozen at that moment: the $array_vraag_1[0] carpet, the $array_vraag_1[1] lawn, the $array_oefen_1[2] house, 
+					the leaden sky. The new president and his first lady. - Richard M. Nixon"
+				</p>
+				<h4>Vraag 2:</h4>
+				<p>We Like</p>
+				<ul>
+					$cars
+				</ul>
+			</article
 		</body>
 		</html>
 _END; 
