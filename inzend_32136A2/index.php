@@ -9,12 +9,11 @@
     for ($gewicht = $input_gewicht; $gewicht < ($input_gewicht + 120); $gewicht+=10) { 
         static $BMI_overzicht;
         $BMI = $gewicht / pow($input_lengte, 2);
-        $BMI_evaluatie;
         switch ($BMI) {
             case $BMI < 18.5:
                 $BMI_evaluatie = " ondergewicht (te laag gewicht)";
                 break;
-            case $BMI >= 18.5 && $BMI <= 24.9:
+            case $BMI < 25:
                 $BMI_evaluatie = " gezond gewicht";
                 break;
             case $BMI >= 25 && $BMI <= 30:
@@ -25,7 +24,6 @@
                 break;
             default:
                 $BMI_evaluatie = " [Error: BMI valt buiten schaal]";
-                break;
         }
         $BMI_overzicht = $BMI_overzicht . "<li>Bij een gewicht van " . $gewicht . " kg hebt u een bmi van " . $BMI . ", u hebt" . $BMI_evaluatie . ".</li>";
     }
