@@ -23,6 +23,14 @@
 		$cars = $cars . "<li>" . $naam . "@" . $kleur . "</li>";
 	}
 
+	$foo = "ipsum";
+	function fun($bar) {
+		echo "Test funtion " . $bar . "<br>";
+		// echo "Test function " . $foo;
+		// $foo doesn't work because it's undefined inside the function.
+	}
+	fun("lorem");
+
 	echo <<<_END
 		<!DOCTYPE html>
 		<html>
