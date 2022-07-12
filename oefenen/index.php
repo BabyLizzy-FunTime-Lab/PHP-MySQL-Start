@@ -31,6 +31,26 @@
 		// $foo doesn't work because it's undefined inside the function.
 	}
 
+	// // Boom van pytagoras
+	// class TBoomvanPythagoras {
+	// 	private $im;
+	// 	private $white;
+	// 	private $black;
+	// 	private $SpinamBlue;
+	// 	private $rood;
+	// 	private $logLineNumer;
+	// 	private $diepte;
+	// 	// function __constructor($width=500, $height=500) {
+	// 		function __constructor($breedte=500) {
+	// 			$this->logLIneNumer = 0;
+	// 			$this->width = $breedte;
+	// 			$this->height = $breedte * 0.6;
+	// 			$this->aantal = $breedte/125;
+
+	// 			// create a pointer to a new true colour image
+	// 		}
+	// }
+
 	echo <<<_END
 		<!DOCTYPE html>
 		<html>
