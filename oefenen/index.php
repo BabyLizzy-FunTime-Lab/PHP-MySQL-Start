@@ -23,13 +23,13 @@
 		$cars = $cars . "<li>" . $naam . "@" . $kleur . "</li>";
 	}
 
+	// test function variable declaration
 	$foo = "ipsum";
 	function fun($bar) {
 		echo "Test funtion " . $bar . "<br>";
 		// echo "Test function " . $foo;
 		// $foo doesn't work because it's undefined inside the function.
 	}
-	fun("lorem");
 
 	echo <<<_END
 		<!DOCTYPE html>
@@ -69,7 +69,22 @@
 					$cars
 				</ul>
 			</article
-		</body>
-		</html>
+_END;
+		echo <<<_END
+			<article>
+				<h2>Function and variable scope</h2>
+_END;
+fun("lorem");
+
+		echo "</article>";
+		echo <<<_END
+			<article>
+				<h2>Boom van pytagoras</h2>
+_END;
+		echo "</article>";
+
+		echo <<<_END
+			</body>
+			</html>
 _END; 
 ?>
