@@ -21,7 +21,7 @@ function drawFlower() {
 
     ctx.fillStyle = "red";
     ctx.strokeStyle = 'blue';
-    ctx.lineWidth = 5;
+    ctx.lineWidth = 2;
     ctx.beginPath();
     ctx.arc(positionX, positionY, 20, 0, Math.PI * 2);
     ctx.closePath();
@@ -44,18 +44,48 @@ function animate() {
 }
 animate();
 
-ctx.beginPath();
-ctx.moveTo(100, 100);
-ctx.lineTo(300, 100);
-ctx.lineTo(300, 300);
-ctx.lineTo(100, 300);
-// ctx.lineTo(100, 100);
-ctx.closePath();
-ctx.stroke();
 
-ctx.beginPath()
-ctx.moveTo(100, 100);
-ctx.lineTo(200, 0);
-ctx.lineTo(300, 300);
-ctx.closePath()
-ctx.stroke();
+let loopcount = 8;
+
+function tree(x1,y1,x2,y2,maxloops) {
+    if(loopcount == maxloops) return;
+
+    let dx = x2 - x1;
+    let dy = y1 - y2;
+
+    let x3 = x2 - dy;
+    let y3 = y2 - dx;
+    let x4 = x1 - dy;
+    let y4 = y1 - dx;
+
+    let x5 = x4 + (dx - dy)/2;
+    let y5 = y4 - (dx + dy)/2;
+
+    // square
+    ctx.beginPath();
+    ctx.moveTo(x1, y1);
+    ctx.lineTo(x2, y2); //300,200
+    ctx.lineTo(x3, y3); //300,400
+    ctx.lineTo(x4, y4); //100,400
+    ctx.closePath();
+    ctx.stroke();
+
+    // Triangle
+    ctx.beginPath()
+    ctx.moveTo(x4, y4);
+    ctx.lineTo(x5, y5);
+    ctx.lineTo(x3, y3);
+    ctx.closePath()
+    ctx.stroke();
+    tree(x5,y5,x3,y3,maxloops + 1);
+    tree(x4,y4,x5,y5,maxloops + 1);
+}
+// let x1 = 375;
+// let y1 = 600;
+// let x2 = 475;
+// let y2 = 600;
+function draw() {
+    ctx.clearRect(0,0,canvas.width, canvas.height);
+    tree(375,600,475,600,0);
+}
+draw();
