@@ -55,7 +55,7 @@ ctx.stroke();
 
 ctx.beginPath()
 ctx.moveTo(100, 100);
-ctx.lineTo(150, 100);
-ctx.lineTo((100 + (200 / 2)), 300);
+ctx.lineTo(200, 0);
+ctx.lineTo(300, 300);
 ctx.closePath()
 ctx.stroke();
