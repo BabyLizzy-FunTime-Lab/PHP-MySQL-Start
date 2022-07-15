@@ -50,6 +50,32 @@
 	// 			// create a pointer to a new true colour image
 	// 		}
 	// }
+	
+	// Dit functie keert een string om en zet het op het scherm
+	function keerString($string) {
+		echo "Ingevoerde string: " . $string . "<br>";
+		echo "Omgekeerde string: " . strrev($string);
+	};	
+
+	// Factorial
+	function factorial($number) {
+		static $factorialnum;
+		static $startnum = 0;
+
+		if ($startnum < $number) {
+			$startnum = $number;
+			$factorialnum = $number;
+		}
+
+		$newNumber = $number - 1;
+		if($newNumber == 0) {
+			echo "De fractorial van " . $startnum . " = " . $factorialnum;
+			return;
+		};
+		$factorialnum = $factorialnum * $newNumber;
+		
+		factorial($newNumber);
+	};
 
 	echo <<<_END
 		<!DOCTYPE html>
@@ -94,13 +120,21 @@ _END;
 			<article>
 				<h2>Function and variable scope</h2>
 _END;
-fun("lorem");
-
+		fun("lorem");
 		echo "</article>";
+
 		echo <<<_END
 			<article>
-				<h2>Boom van pytagoras</h2>
+				<h2>String om keren</h2>
 _END;
+		keerString("1234");
+		echo "</article>";
+
+		echo <<<_END
+			<article>
+				<h2>Factorial</h2>
+_END;
+		factorial(5);
 		echo "</article>";
 
 		echo <<<_END
