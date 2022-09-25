@@ -65,17 +65,25 @@
 		if ($startnum < $number) {
 			$startnum = $number;
 			$factorialnum = $number;
-		}
+		} 
 
 		$newNumber = $number - 1;
 		if($newNumber == 0) {
-			echo "De fractorial van " . $startnum . " = " . $factorialnum;
+			echo "De fractorial van " . strval($startnum) . " = " . strval($factorialnum) . "<br>";
 			return;
 		};
 		$factorialnum = $factorialnum * $newNumber;
 		
 		factorial($newNumber);
 	};
+
+	function factorial_2($number) {
+		if ($number < 2) {
+			return 1;
+		} else {
+			return ($number * factorial_2($number - 1));
+		}
+	}
 
 	echo <<<_END
 		<!DOCTYPE html>
@@ -134,7 +142,9 @@ _END;
 			<article>
 				<h2>Factorial</h2>
 _END;
-		factorial(5);
+		echo factorial(5);
+		echo factorial_2(5);
+		echo "test";
 		echo "</article>";
 
 		echo <<<_END
